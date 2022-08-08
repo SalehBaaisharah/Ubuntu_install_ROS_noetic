@@ -12,47 +12,42 @@
 
 To install ROS Noetic follow the steps in http://wiki.ros.org/noetic/Installation/Ubuntu
 
-Pick Desktop-Full Install
-```sudo apt install ros-noetic-desktop-full```
+Pick Desktop Install
+```sudo apt install ros-noetic-desktop```
 
 
 
 To install ROS on Jetson Nano
 
+Set up the Jetson Nano
 ```
-$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu 
+$(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
 ```
-
+Add a new apt key
 ```
 $ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
 ```
-
+Update the Debian packages index
 ```
 $ sudo apt update
 
 ```
+Update your .bashrc script:
 
 ```
-$ sudo apt install ros-noetic-desktop
-
-```
-
-```
-$ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc 
+$ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc 
 $ source ~/.bashrc
 ```
-
+Install and initialize rosdep. rosdep 
 ```
-$ sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+$ sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 $ sudo rosdep init 
 $ rosdep update
 ```
 
-```
-
-```
 
 
 
